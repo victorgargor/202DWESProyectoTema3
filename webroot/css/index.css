@@ -1,65 +1,130 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-:root {
-    --color1: white;
-    --color2: #cae9ff;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 html, body {
     height: 100%;
-    width: 100%;
 }
 
-body{
+body {
+    background-color: #0f171e; 
+    color: #ffffff; 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-body > header {
-    background-color: var(--color2);
-    padding: 30px;
-}
-
-h1 {
+header {
     text-align: center;
+    background-color: #232f3e; /* Azul oscuro */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-main{
-    background-color: var(--color1);
-    flex: 1;
+header h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+main {
+    flex-grow: 1; 
+    padding: 20px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
-h2 {
+nav {
+    width: 100%;
+    max-width: 900px; 
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #37475a;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
     text-align: center;
-    padding-top: 20px;
+    border: 1px solid #232f3e;
+    font-size: 1.1em;
 }
 
-ul {
-    text-align: center;
-    list-style-type: none;
+th {
+    background-color: #131a22; 
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-ul > li {
-    padding: 45px;
-    font-size: 1.2em;
+td {
+    background-color: #232f3e; 
+    color: #ffffff;
+}
+
+td a {
+    text-decoration: none;
+    color: #00a8e1; 
+}
+
+td a img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+td a:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+tr:nth-child(even) td {
+    background-color: #2c3e50; 
 }
 
 footer {
-    background-color: var(--color2);
+    background-color: #131a22;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    padding: 10px; 
+    align-items: center;
+    flex-direction: column;
 }
 
-a > img {
-    width: 70px;
-    height: 70px;
+footer div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
+
+footer a img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer a:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}

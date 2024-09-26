@@ -11,7 +11,7 @@
             <h1 id="inicio">TEMA 3 CARACTERÍSTICAS DEL LENGUAJE PHP</h1>
         </header>
         <main>
-            <section>
+            <nav>
                 <table>
                     <tr>
                         <th>nº</th>
@@ -26,14 +26,14 @@
                         <td><a href="mostrarcodigo/muestraEjercicio00.php">Mostrar</a></td>
                     </tr>
                 </table>
-            </section>       
+            </nav>       
         </main>
         <footer>
             <div>
                 <a href="/index.html">Víctor García Gordón</a>
                 <a href="/202DWESProyectoDWES/indexProyectoDWES.php">DWES</a>
                 <a target="blank" href="doc/curriculum.pdf"><img src="doc/curriculum.jpg" alt="curriculum"></a>
-                <a target="blank" href="https://github.com/victorgargor"><img src="doc/github.png" alt="github"></a>
+                <a target="blank" href="https://github.com/victorgargor/202DWESProyectoTema3"><img src="doc/github.png" alt="github"></a>
             </div>
         </footer>
     </body>

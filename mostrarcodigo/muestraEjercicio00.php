@@ -14,6 +14,7 @@
             <section>
                 <?php
                 highlight_file("../codigoPHP/ejercicio00.php");
+                //show_source("../codigoPHP/ejercicio00.php");
                 ?>
             </section>       
         </main>
