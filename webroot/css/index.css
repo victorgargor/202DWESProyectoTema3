@@ -7,11 +7,12 @@
 
 html, body {
     height: 100%;
+    overflow: hidden; 
 }
 
 body {
-    background-color: #0f171e; 
-    color: #ffffff; 
+    background-color: #ffffff; 
+    color: #000000; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -19,57 +20,61 @@ body {
 
 header {
     text-align: center;
-    background-color: #232f3e; /* Azul oscuro */
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: #f0f0f0; 
+    padding: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 1.8em; 
     font-weight: 400;
     letter-spacing: 1px;
-    color: #ffffff;
+    color: #333333; 
 }
 
 main {
     flex-grow: 1; 
-    padding: 20px;
+    padding: 10px; 
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    overflow-y: auto; 
 }
 
 nav {
     width: 100%;
-    max-width: 900px; 
+    max-width: 900px;
     margin: 0 auto;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto; 
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #37475a;
+    background-color: #d9d9d9;
     border-radius: 5px;
     overflow: hidden;
+    font-size: 0.9em; 
 }
 
 th, td {
-    padding: 15px;
+    padding: 10px; 
     text-align: center;
-    border: 1px solid #232f3e;
-    font-size: 1.1em;
+    border: 1px solid #f0f0f0;
+    font-size: 1em;
 }
 
 th {
-    background-color: #131a22; 
-    color: #ffffff;
+    background-color: #333333; 
+    color: #ffffff; 
     font-weight: bold;
     text-transform: uppercase;
 }
 
 td {
-    background-color: #232f3e; 
-    color: #ffffff;
+    background-color: #f0f0f0; 
+    color: #000000;
 }
 
 td a {
@@ -78,7 +83,7 @@ td a {
 }
 
 td a img {
-    width: 30px;
+    width: 20px;
     height: auto;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -89,12 +94,12 @@ td a:hover img {
 }
 
 tr:nth-child(even) td {
-    background-color: #2c3e50; 
+    background-color: #e0e0e0; 
 }
 
 footer {
-    background-color: #131a22;
-    padding: 20px;
+    background-color: #f0f0f0; 
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,15 +108,15 @@ footer {
 
 footer div {
     display: flex;
-    gap: 20px;
+    gap: 10px; 
     align-items: center;
     justify-content: center;
 }
 
 footer a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 0.9em; 
 }
 
 footer a:hover {
@@ -119,7 +124,7 @@ footer a:hover {
 }
 
 footer a img {
-    width: 50px;
+    width: 30px; 
     height: auto;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
