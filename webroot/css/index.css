@@ -49,6 +49,14 @@ nav {
     overflow-y: auto; 
 }
 
+section {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto; 
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
