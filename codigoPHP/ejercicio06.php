@@ -8,13 +8,17 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Hola mundo y phpinfo()</h1>
+            <h1 id="inicio">Operar con fechas: calcular la fecha y el día de la semana de dentro de 60 días.</h1>
         </header>
         <main>
             <section>
                 <?php
-                    echo "Hola mundo";
-                    phpinfo();
+                    $fechaActual = date("Y-m-d");
+                    $fecha60Dias = date("Y-m-d", strtotime("+60 days"));
+                    $diaSemana = date("l", strtotime("+60 days"));
+                    echo 'Fecha actual: '.$fechaActual.'<br>';
+                    echo 'Fecha dentro de 60 días: '.$fecha60Dias.'<br>';
+                    echo 'Dia semana: '.$diaSemana;                
                 ?>   
             </section>
         </main>

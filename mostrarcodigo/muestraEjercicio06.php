@@ -8,15 +8,15 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Hola mundo y phpinfo()</h1>
+            <h1 id="inicio">Operar con fechas: calcular la fecha y el día de la semana de dentro de 60 días.</h1>
         </header>
         <main>
-            <section>
+             <section>
                 <?php
-                    echo "Hola mundo";
-                    phpinfo();
-                ?>   
-            </section>
+                highlight_file("../codigoPHP/ejercicio06.php");
+                //show_source("../codigoPHP/ejercicio06.php");
+                ?>
+            </section>  
         </main>
         <footer>
             <div>

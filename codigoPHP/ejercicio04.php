@@ -8,13 +8,12 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Hola mundo y phpinfo()</h1>
+            <h1 id="inicio">Mostrar en tu página index la fecha y hora actual en Oporto formateada en portugués.</h1>
         </header>
         <main>
             <section>
                 <?php
-                    echo "Hola mundo";
-                    phpinfo();
+                    
                 ?>   
             </section>
         </main>

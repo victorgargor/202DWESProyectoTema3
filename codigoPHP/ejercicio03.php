@@ -8,13 +8,14 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Hola mundo y phpinfo()</h1>
+            <h1 id="inicio">Mostrar en tu página index la fecha y hora actual formateada en castellano.</h1>
         </header>
         <main>
             <section>
                 <?php
-                    echo "Hola mundo";
-                    phpinfo();
+                    $fecha = new DateTime();
+                    setlocale(LC_TIME, 'es_ES.UTF-8');
+                    echo strftime("%A, %d de %B de %Y, %H:%M:%S", $fecha->getTimestamp());
                 ?>   
             </section>
         </main>

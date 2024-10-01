@@ -8,15 +8,15 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Hola mundo y phpinfo()</h1>
+            <h1 id="inicio">Mostrar en tu página index la fecha y hora actual formateada en castellano.</h1>
         </header>
         <main>
-            <section>
+             <section>
                 <?php
-                    echo "Hola mundo";
-                    phpinfo();
-                ?>   
-            </section>
+                highlight_file("../codigoPHP/ejercicio03.php");
+                //show_source("../codigoPHP/ejercicio03.php");
+                ?>
+            </section>  
         </main>
         <footer>
             <div>

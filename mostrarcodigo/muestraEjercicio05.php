@@ -8,15 +8,15 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Hola mundo y phpinfo()</h1>
+            <h1 id="inicio">Inicializar y mostrar una variable que tiene una marca de tiempo.</h1>
         </header>
         <main>
-            <section>
+             <section>
                 <?php
-                    echo "Hola mundo";
-                    phpinfo();
-                ?>   
-            </section>
+                highlight_file("../codigoPHP/ejercicio05.php");
+                //show_source("../codigoPHP/ejercicio05.php");
+                ?>
+            </section>  
         </main>
         <footer>
             <div>

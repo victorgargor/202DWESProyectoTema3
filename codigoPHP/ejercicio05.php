@@ -8,13 +8,14 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Hola mundo y phpinfo()</h1>
+            <h1 id="inicio">Inicializar y mostrar una variable que tiene una marca de tiempo.</h1>
         </header>
         <main>
             <section>
                 <?php
-                    echo "Hola mundo";
-                    phpinfo();
+                    $marcaTiempo = time();
+                    $fechaActual = date("d-m-Y H:i:s", $marcaTiempo);
+                    echo $fechaActual;
                 ?>   
             </section>
         </main>

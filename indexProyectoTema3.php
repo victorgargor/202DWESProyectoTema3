@@ -40,8 +40,8 @@
                     <tr>
                         <td>3</td>
                         <td>Mostrar en tu página index la fecha y hora actual formateada en castellano.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio03.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio03.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>4</td>
@@ -52,14 +52,14 @@
                     <tr>
                         <td>5</td>
                         <td>Inicializar y mostrar una variable que tiene una marca de tiempo.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio05.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio05.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td>Operar con fechas: calcular la fecha y el día de la semana de dentro de 60 días.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio06.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio06.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>7</td>
