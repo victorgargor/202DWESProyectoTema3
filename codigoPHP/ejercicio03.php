@@ -13,9 +13,12 @@
         <main>
             <section>
                 <?php
-                    $fecha = new DateTime();
-                    setlocale(LC_TIME, 'es_ES.UTF-8');
-                    echo strftime("%A, %d de %B de %Y, %H:%M:%S", $fecha->getTimestamp());
+                    $oFechaActual = new DateTime("now", new DateTimeZone("Europe/Madrid"));
+                    $oFechaNacimiento = new DateTime('2005-09-01' , new DateTimeZone("Europe/Madrid"));
+                    echo 'Hola, hoy es <b>'.$oFechaActual->format('j').' de '.$oFechaActual->format('F').' de '.$oFechaActual->format('Y').'</b> y son las <b>'
+                    .$oFechaActual->format('H').':'.$oFechaActual->format('i').'</b> horas en Benavente, las <b>' 
+                    //$oFechaActual->setTimezone(new DateTimeZone("Europe/Lisbon"));               
+                    .$oFechaActual->format('H').':'.$oFechaActual->format('i').'</b> horas en Oporto. Nací el <b>'.$oFechaNacimiento->format('d').'</b> de <b>'
                 ?>   
             </section>
         </main>
