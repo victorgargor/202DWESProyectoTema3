@@ -64,26 +64,26 @@
                     <tr>
                         <td>7</td>
                         <td>Mostrar el nombre del fichero que se está ejecutando.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio07.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio07.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>8</td>
                         <td>Mostrar la dirección IP del equipo desde el que estás accediendo.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio08.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio08.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>9</td>
                         <td>Mostrar el path donde se encuentra el fichero que se está ejecutando.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio09.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio09.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>10</td>
                         <td>Mostrar el contenido del fichero que se está ejecutando.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio10.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio10.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>11</td>
@@ -94,8 +94,8 @@
                     <tr>
                         <td>12</td>
                         <td>Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach()).</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio12.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio12.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>13</td>

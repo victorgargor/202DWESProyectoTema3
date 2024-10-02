@@ -8,14 +8,14 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Inicializar y mostrar una variable que tiene una marca de tiempo.</h1>
+            <h1 id="inicio">Mostrar el nombre del fichero que se está ejecutando.</h1>
         </header>
         <main>
             <section>
                 <?php
-                    $timestamp = time();
-                    echo "La fecha y hora actuales son: <b>" . date("Y-m-d H:i:s", $timestamp)."</b> y los segundos que han pasado desde las 00:00 del 1 de Enero de 1970 son: <b>".$timestamp."</b>";
-                ?>   
+                highlight_file("../codigoPHP/ejercicio07.php");
+                //show_source("../codigoPHP/ejercicio07.php");
+                ?>  
             </section>
         </main>
         <footer>
