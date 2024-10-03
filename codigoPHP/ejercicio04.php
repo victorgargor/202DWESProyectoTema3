@@ -13,7 +13,8 @@
         <main>
             <section>
                 <?php
-                    
+                    $oFechaActual = new DateTime("now", new DateTimeZone("Europe/Lisbon"));
+                    echo 'La fecha y hora actuales de Oporto son: <b>'.$oFechaActual->format('d M o G').':'.$oFechaActual->format('i').'</b>';
                 ?>   
             </section>
         </main>

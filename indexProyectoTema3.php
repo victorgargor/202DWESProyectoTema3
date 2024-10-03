@@ -46,8 +46,8 @@
                     <tr>
                         <td>4</td>
                         <td>Mostrar en tu página index la fecha y hora actual en Oporto formateada en portugués.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio04.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio04.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>5</td>
@@ -115,8 +115,8 @@
                         <td>15</td>
                         <td>Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la
                             semana.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio15.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio15.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>16</td>

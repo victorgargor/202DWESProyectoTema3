@@ -8,15 +8,15 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Mostrar en tu página index la fecha y hora actual en Oporto formateada en portugués.</h1>
+            <h1 id="inicio">Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la semana.</h1>
         </header>
         <main>
-             <section>
+            <section>
                 <?php
-                highlight_file("../codigoPHP/ejercicio04.php");
-                //show_source("../codigoPHP/ejercicio04.php");
-                ?>
-            </section>  
+                highlight_file("../codigoPHP/ejercicio15.php");
+                //show_source("../codigoPHP/ejercicio15.php");
+                ?>  
+            </section>
         </main>
         <footer>
             <div>
