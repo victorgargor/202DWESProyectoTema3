@@ -13,11 +13,14 @@
         <main>
             <section>
                 <?php          
-                $oFechaActual = new DateTime("now", new DateTimeZone("Europe/Madrid"));
-                $oFechaNacimiento = new DateTime('2005-09-01', new DateTimeZone("Europe/Madrid"));
-                $oFechaFutura = new DateTime('2050-01-01', new DateTimeZone("Europe/Madrid"));
+                setlocale(LC_ALL, "es_ES");
+                date_default_timezone_set("Europe/Madrid");
+                $oFechaActual = new DateTime("now");
+                $oFechaNacimiento = new DateTime('2005-09-01');
+                $oFechaFutura = new DateTime('2050-01-01');
                 echo 'Hola, hoy es <b>' . $oFechaActual->format('j') . ' de ' . $oFechaActual->format('F') . ' de ' . $oFechaActual->format('Y') . '</b> y son las <b>'
                 . $oFechaActual->format('H') . ':' . $oFechaActual->format('i') . '</b> horas en Benavente, las <b>';
+                setlocale(LC_ALL, "pt_PT");
                 $oFechaActual->setTimezone(new DateTimeZone("Europe/Lisbon"));
                 echo $oFechaActual->format('H') . ':' . $oFechaActual->format('i') . '</b> horas en Oporto.</br>';
                 $oFechaActual->setTimezone(new DateTimeZone("Europe/Madrid"));
