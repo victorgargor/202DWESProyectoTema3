@@ -13,7 +13,15 @@
         <main>
             <section>
                 <?php
+                /**
+                 * @author Víctor García Gordón
+                 * @version 1.0
+                 * @since 07/10/2024
+                 */
+                    // Muestra un mensaje en pantalla con el texto "Hola mundo"
                     echo "Hola mundo";
+                    
+                    // Llama a la función phpinfo() que genera una página con la información del entorno PHP
                     phpinfo();
                 ?>   
             </section>
@@ -26,3 +34,4 @@
         </footer>
     </body>
 </html>
+
