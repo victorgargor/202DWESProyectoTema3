@@ -64,25 +64,25 @@
                     <tr>
                         <td>7</td>
                         <td>Mostrar el nombre del fichero que se está ejecutando.</td>
-                        <td><a href="codigoPHP/ejercicio07.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="codigoPHP/ejercicio07.php"><img src="doc/play.png" alt="play"></a></td>
                         <td><a href="mostrarcodigo/muestraEjercicio07.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>8</td>
                         <td>Mostrar la dirección IP del equipo desde el que estás accediendo.</td>
-                        <td><a href="codigoPHP/ejercicio08.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="codigoPHP/ejercicio08.php"><img src="doc/play.png" alt="play"></a></td>
                         <td><a href="mostrarcodigo/muestraEjercicio08.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>9</td>
                         <td>Mostrar el path donde se encuentra el fichero que se está ejecutando.</td>
-                        <td><a href="codigoPHP/ejercicio09.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="codigoPHP/ejercicio09.php"><img src="doc/play.png" alt="play"></a></td>
                         <td><a href="mostrarcodigo/muestraEjercicio09.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>10</td>
                         <td>Mostrar el contenido del fichero que se está ejecutando.</td>
-                        <td><a href="codigoPHP/ejercicio10.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="codigoPHP/ejercicio10.php"><img src="doc/play.png" alt="play"></a></td>
                         <td><a href="mostrarcodigo/muestraEjercicio10.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
@@ -94,7 +94,7 @@
                     <tr>
                         <td>12</td>
                         <td>Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach()).</td>
-                        <td><a href="codigoPHP/ejercicio12.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="codigoPHP/ejercicio12.php"><img src="doc/play.png" alt="play"></a></td>
                         <td><a href="mostrarcodigo/muestraEjercicio12.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
@@ -115,7 +115,7 @@
                         <td>15</td>
                         <td>Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la
                             semana.</td>
-                        <td><a href="codigoPHP/ejercicio15.php"><img src="doc/play.png" alt="play"></td>
+                        <td><a href="codigoPHP/ejercicio15.php"><img src="doc/play.png" alt="play"></a></td>
                         <td><a href="mostrarcodigo/muestraEjercicio15.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
@@ -158,16 +158,16 @@
                         <td>Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre
                             las preguntas y las respuestas recogidas.
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio21.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio21.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>22</td>
                         <td>Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
                             recogidas.
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio22.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio22.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>23</td>

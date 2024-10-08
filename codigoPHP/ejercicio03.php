@@ -13,7 +13,7 @@
         <main>
             <section>
                 <?php          
-                setlocale(LC_ALL, "es_ES");
+                setlocale(LC_ALL, "es_ES.utf8");
                 date_default_timezone_set("Europe/Madrid");
                 $oFechaActual = new DateTime("now");
                 $oFechaNacimiento = new DateTime('2005-09-01');
