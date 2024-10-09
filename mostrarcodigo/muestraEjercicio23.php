@@ -8,21 +8,15 @@
     </head>
     <body>
         <header>      
-            <h1 id="inicio">Hola mundo y phpinfo()</h1>
+            <h1 id="inicio">Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y 
+                las respuestas recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente.
+            </h1>
         </header>
         <main>
             <section>
                 <?php
-                /**
-                 * @author Víctor García Gordón
-                 * @version Fecha de última modificación 09/10/2024
-                 */
-                    // Muestra un mensaje en pantalla con el texto "Hola mundo"
-                    echo "Hola mundo";
-                    
-                    // Llama a la función phpinfo() que genera una página con la información del entorno PHP
-                    phpinfo();
-                ?>   
+                highlight_file("../codigoPHP/ejercicio23.php");
+                ?>
             </section>
         </main>
         <footer>
@@ -33,4 +27,3 @@
         </footer>
     </body>
 </html>
-

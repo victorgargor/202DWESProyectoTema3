@@ -13,6 +13,7 @@
             </h1>
         </header>
         <main>
+            <!-- Formulario para recoger el nombre y primer apellido -->
             <form name="ejercicio21" action="Tratamiento.php" method="post">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre">
@@ -20,7 +21,7 @@
                 <label for="primerApellido">Primer Apellido:</label>
                 <input type="text" id="primerApellido" name="primerApellido">
                 <br>
-                <input type="submit" value="Enviar">
+                <input type="submit" name="enviar" value="enviar">
             </form>
         </main>
         <footer>

@@ -174,8 +174,8 @@
                         <td>Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
                             recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente.
                         </td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio23.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio23.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>24</td>

@@ -13,9 +13,16 @@
             </h1>
         </header>
         <main>
-            <?php 
-            echo  "Nombre: <b>".$_REQUEST["nombre"]."</b><br>";
-            echo "Apellido: <b>".$_REQUEST["primerApellido"]; ?>
+            <?php
+            /**
+             * @author Víctor García Gordón
+             * @version Fecha de última modificación 09/10/2024
+             */
+            // Muestra el nombre ingresado por el usuario
+            echo "Nombre: <b>" . $_REQUEST["nombre"] . "</b><br>";
+            // Muestra el primer apellido ingresado por el usuario
+            echo "Apellido: <b>" . $_REQUEST["primerApellido"];
+            ?>
         </main>
         <footer>
             <div>

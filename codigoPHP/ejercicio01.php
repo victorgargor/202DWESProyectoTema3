@@ -15,8 +15,7 @@
                 <?php
                 /**
                  * @author Víctor García Gordón
-                 * @version 1.0
-                 * @since 07/10/2024
+                 * @version Fecha de última modificación 09/10/2024
                  */
                 // Inicializa una variable de tipo cadena (string) con el nombre "Víctor"
                 $cadena = "Víctor";
