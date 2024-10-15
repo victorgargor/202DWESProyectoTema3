@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="" type="text/css">
+        <link rel="stylesheet" href="../webroot/css/index.css" type="text/css">
         <title>Víctor García Gordón</title>
     </head>
     <body>
@@ -23,17 +23,22 @@
                 require_once('../core/231018libreriaValidacion.php');
 
                 //Inicializacion de las variables
-                $entradaOK = true; //Variable que nos indica que todo va bienç
-                $aErrores = []; //Array donde recogemos los mensajes de error
-                $aRespuestas = []; //Array donde recogeremos la respuestas correctas (si $entradaOK)
+                $entradaOK = true; //Variable que nos indica que todo va bien
+                $oFechaActual = new DateTime("now"); //Variable que recoge la fecha actual
+                //Array donde recogemos los mensajes de error
+                $aErrores = ['nombre' => '']; 
+                $aErrores = ['edad' => '']; 
+                //Array donde recogeremos la respuestas correctas (si $entradaOK)
+                $aRespuestas = ['nombre' => ''];
+                $aRespuestas = ['edad' => ''];
 
 
                 // Verifica si el formulario ha sido enviado
                 if (isset($_REQUEST['enviar'])) {
                         //Para cada campo del formulario: Validar entrada y actuar en consecuencia
                         $aErrores = [
-                                'nombre' => validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 50, 3, 1),
-                                'edad' => validacionFormularios::comprobarAlfaNumerico($_REQUEST['edad'], 2, 1, 1),
+                                'nombre' => validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 1000, 1, 1),
+                                'edad' => validacionFormularios::comprobarEntero($_REQUEST['edad'], 200, 1, 0),
                         ];
 
                         //Recorremos el array de errores
@@ -56,25 +61,31 @@
                         ];
 
                         //Mostramos las respuestas por pantalla
-                        echo "<h1>Respuestas:</h1>";
+                        echo "<h2>Respuestas:</h2>";
                         foreach ($aRespuestas as $key => $value) {
                                 echo "$key : $value <br>";
                         }
                 } else {
                         //Mostrar el formulario hasta que lo rellenemos correctamente
                 ?>
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                        <label for="nombre">Nombre:</label><br>
-                        <input type="text" id="nombre" name="nombre"><br>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
+                        <label for="nombre">Nombre: 
+                        <input type="text" id="nombre" name="nombre" required style="background-color: yellow">
+                        </label>
                         <?php if (!empty($aErrores["nombre"])) { ?>
-                                <span><?php echo $aErrores["nombre"]; ?></span>
-                        <?php } ?>
+                                <span style="color: red"><?php echo $aErrores["nombre"]; ?></span>
+                        <?php } ?>                
                         <br>
-                        <label for="edad">Edad:</label><br>
-                        <input type="text" id="edad" name="edad"><br>
+                        <label for="edad">Edad:
+                            <input type="number" id="edad" name="edad" value="1" style="background-color: white">
+                        </label>
                         <?php if (!empty($aErrores["edad"])) { ?>
-                                <span><?php echo $aErrores["edad"]; ?></span>
-                        <?php } ?>
+                        <span style="color: red"><?php echo $aErrores["edad"]; ?></span>
+                        <?php } ?>             
+                        <br>
+                        <label for="fecha">Fecha Actual:
+                            <input type="date" id="fecha" name="fecha" value= style="background-color: lightgray" disabled>
+                        </label>
                         <br>
                         <input name="enviar" type="submit" value="Enviar">
                 </form>
