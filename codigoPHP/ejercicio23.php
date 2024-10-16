@@ -16,7 +16,7 @@
             <?php
                 /**
                  * @author Víctor García Gordón
-                 * @version Fecha de última modificación 14/10/2024
+                 * @version Fecha de última modificación 15/10/2024
                  */
 
                 //Incluimos la libreria de validacion de formularios
@@ -26,20 +26,22 @@
                 $entradaOK = true; //Variable que nos indica que todo va bien
                 $oFechaActual = new DateTime("now"); //Variable que recoge la fecha actual
                 //Array donde recogemos los mensajes de error
-                $aErrores = ['nombre' => '']; 
-                $aErrores = ['edad' => '']; 
+                $aErrores = ['nombre' => '',
+                    'edad' => '',
+                    'fecha' => $oFechaActual
+                ]; 
                 //Array donde recogeremos la respuestas correctas (si $entradaOK)
-                $aRespuestas = ['nombre' => ''];
-                $aRespuestas = ['edad' => ''];
+                $aRespuestas = ['nombre' => '',
+                    'edad' => '',
+                    'fecha' => $oFechaActual
+                ];
 
 
                 // Verifica si el formulario ha sido enviado
                 if (isset($_REQUEST['enviar'])) {
                         //Para cada campo del formulario: Validar entrada y actuar en consecuencia
-                        $aErrores = [
-                                'nombre' => validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 1000, 1, 1),
-                                'edad' => validacionFormularios::comprobarEntero($_REQUEST['edad'], 200, 1, 0),
-                        ];
+                        $aErrores['nombre'] = validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 1000, 1, 1);
+                        $aErrores['edad'] = validacionFormularios::comprobarEntero($_REQUEST['edad'], 200, 1, 0);
 
                         //Recorremos el array de errores
                         foreach ($aErrores as $clave => $valor) {
@@ -84,7 +86,7 @@
                         <?php } ?>             
                         <br>
                         <label for="fecha">Fecha Actual:
-                            <input type="date" id="fecha" name="fecha" value= style="background-color: lightgray" disabled>
+                            <input type="text" id="fecha" name="fecha" value="<?php echo date_format($oFechaActual, 'd-m-Y')?>" style="background-color: lightgray" disabled>
                         </label>
                         <br>
                         <input name="enviar" type="submit" value="Enviar">
