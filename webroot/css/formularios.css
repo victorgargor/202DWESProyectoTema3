@@ -1,0 +1,145 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; 
+}
+
+body {
+    background-color: #ffffff; 
+    color: #000000; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    text-align: center;
+    background-color: #f0f0f0; 
+    padding: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 1.5em; 
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #333333; 
+}
+
+main {
+    flex-grow: 1; 
+    padding: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto; 
+}
+
+form {
+    width: 100%;
+    max-width: 600px; 
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    padding: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+label {
+    font-size: 1em; 
+    color: #333;
+}
+
+input[type="text"], 
+input[type="date"], 
+input[type="submit"] {
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 1em; 
+}
+
+input[type="text"]:focus, 
+input[type="date"]:focus {
+    border-color: #00a8e1; 
+    outline: none; 
+}
+
+input[type="submit"] {
+    background-color: #00a8e1; 
+    color: #fff; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #008bb5; 
+}
+
+span {
+    color: red; 
+    font-size: 0.9em; 
+}
+
+footer {
+    background-color: #f0f0f0; 
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer div {
+    display: flex;
+    gap: 10px; 
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.9em; 
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
+
+.responses {
+    width: 100%;
+    max-width: 600px; 
+    background-color: #e9f7ef; 
+    border: 1px solid #b2ebf2; 
+    border-radius: 5px;
+    padding: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; 
+}
+
+.responses h2 {
+    font-size: 1.5em; 
+    color: #00796b; 
+    margin-bottom: 15px; 
+}
+
+.responses p {
+    font-size: 1em; 
+    color: #333; 
+    margin: 5px 0; 
+}
+
+.responses p span {
+    font-weight: bold; 
+    color: #00796b; 
+}
