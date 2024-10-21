@@ -17,7 +17,7 @@
             <?php
                 /**
                  * @author Víctor García Gordón
-                 * @version Fecha de última modificación 20/10/2024
+                 * @version Fecha de última modificación 21/10/2024
                  */
 
                 //Incluimos la libreria de validacion de formularios
@@ -38,7 +38,9 @@
                     'edad' => '',
                     'email' => '',
                     'telefono' => '',
-                    'aceptaCondiciones' => '' 
+                    'altura' => '', 
+                    'aceptaCondiciones' => '',
+                    'fechaActual' => '' 
                 ]; 
                 
                 //Array donde recogeremos las respuestas correctas (si $entradaOK)
@@ -48,8 +50,9 @@
                     'edad' => '',
                     'email' => '',
                     'telefono' => '',
+                    'altura' => '',
                     'aceptaCondiciones' => '', 
-                    'fechaActual' => ''
+                    'fechaActual' => '' 
                 ];
 
                 // Verifica si el formulario ha sido enviado
@@ -60,6 +63,7 @@
                         $aErrores['fechaNacimiento'] = validacionFormularios::validarFecha($_REQUEST['fechaNacimiento'], date_format($oFechaActual, 'd-m-Y'), '01/01/1900', OBLIGATORIO);                    
                         $aErrores['email'] = validacionFormularios::validarEmail($_REQUEST['email'], OBLIGATORIO);
                         $aErrores['telefono'] = validacionFormularios::validarTelefono($_REQUEST['telefono'], OBLIGATORIO);
+                        $aErrores['altura'] = validacionFormularios::comprobarFloat($_REQUEST['altura'], PHP_FLOAT_MAX, 0, OPCIONAL); 
                         if (!isset($_REQUEST['aceptaCondiciones'])) {
                             $aErrores['aceptaCondiciones'] = "Debe aceptar los términos y condiciones.";
                         }
@@ -86,68 +90,93 @@
                                 'edad' => $_REQUEST['edad'],
                                 'email' => $_REQUEST['email'],
                                 'telefono' => $_REQUEST['telefono'], 
+                                'altura' => $_REQUEST['altura'],
                                 'aceptaCondiciones' => (isset($_REQUEST['aceptaCondiciones']) ? 'Sí' : 'No'),
-                                'fechaActual' => date_format($oFechaActual, 'd-m-Y')
+                                'fechaActual' => $oFechaActual 
                         ];
 
                         //Mostramos las respuestas por pantalla
-                        echo '<div class="responses">';
-                        echo "<h2>Respuestas:</h2>";
+                        echo '<div class="respuestas-container">';
+                        echo '<h2 class="respuestas-header">Respuestas:</h2>';
                         foreach ($aRespuestas as $key => $value) {
+                            echo '<div class="respuesta-item">';
+                            if ($key == 'fechaActual') {
+                                // Formateamos la fecha cuando la mostramos
+                                echo "$key : " . $value->format('d-m-Y') . "<br>";
+                            } else {
                                 echo "$key : $value <br>";
+                            }
+                            echo '</div>';
                         }
                         echo '</div>'; 
                 } else {
                         //Mostrar el formulario hasta que lo rellenemos correctamente
                 ?>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
+                <div class="form-group">
                 <label for="nombre">Nombre: 
-                    <input type="text" id="nombre" name="nombre" required style="background-color: yellow" value="<?php echo (isset($_REQUEST['nombre']) ? $_REQUEST['nombre'] : ''); ?>">
+                    <input type="text" id="nombre" name="nombre" required style="background-color: yellow" value="<?php echo (isset($_REQUEST['nombre']) ? $_REQUEST['nombre'] : ''); ?>" placeholder="Ej: Víctor García">
                 </label>
                 <?php if (!empty($aErrores["nombre"])) { ?>
                     <span style="color: red"><?php echo $aErrores["nombre"]; ?></span>
                 <?php } ?>
-                <br>
+                </div>
+                <div class="form-group">
                 <label for="fechaNacimiento">Fecha de nacimiento: 
                     <input type="date" id="fechaNacimiento" name="fechaNacimiento" required style="background-color: yellow" value="<?php echo (isset($_REQUEST['fechaNacimiento']) ? $_REQUEST['fechaNacimiento'] : ''); ?>">
                 </label>
                 <?php if (!empty($aErrores["fechaNacimiento"])) { ?>
                     <span style="color: red"><?php echo $aErrores["fechaNacimiento"]; ?></span>
                 <?php } ?>
-                <br>
+                </div>
+                <div class="form-group">
                 <label for="edad">Edad:
-                    <input type="text" id="edad" name="edad" style="background-color: white" value="<?php echo (isset($_REQUEST['edad']) ? $_REQUEST['edad'] : ''); ?>">
+                    <input type="text" id="edad" name="edad" style="background-color: white" value="<?php echo (isset($_REQUEST['edad']) ? $_REQUEST['edad'] : ''); ?>" placeholder="Ej: 30">
                 </label>
                 <?php if (!empty($aErrores["edad"])) { ?>
                     <span style="color: red"><?php echo $aErrores["edad"]; ?></span>
                 <?php } ?>
-                <br>
+                </div>
+                <div class="form-group">
                 <label for="email">Correo electrónico:
-                    <input type="email" id="email" name="email" required style="background-color: yellow" value="<?php echo (isset($_REQUEST['email']) ? $_REQUEST['email'] : ''); ?>">
+                    <input type="email" id="email" name="email" required style="background-color: yellow" value="<?php echo (isset($_REQUEST['email']) ? $_REQUEST['email'] : ''); ?>" placeholder="Ej: victor@dominio.com">
                 </label>
                 <?php if (!empty($aErrores["email"])) { ?>
                     <span style="color: red"><?php echo $aErrores["email"]; ?></span>
                 <?php } ?>
-                <br>
+                </div>
+                <div class="form-group">
                 <label for="telefono">Teléfono:
-                    <input type="tel" id="telefono" name="telefono" required style="background-color: yellow" value="<?php echo (isset($_REQUEST['telefono']) ? $_REQUEST['telefono'] : ''); ?>">
+                    <input type="tel" id="telefono" name="telefono" required style="background-color: yellow" value="<?php echo (isset($_REQUEST['telefono']) ? $_REQUEST['telefono'] : ''); ?>" placeholder="654321987">
                 </label>
                 <?php if (!empty($aErrores["telefono"])) { ?>
                     <span style="color: red"><?php echo $aErrores["telefono"]; ?></span>
                 <?php } ?>
-                <br>
+                </div>
+                <div class="form-group">
+                <label for="altura">Altura (m):
+                    <input type="text" id="altura" name="altura" style="background-color: white" value="<?php echo (isset($_REQUEST['altura']) ? $_REQUEST['altura'] : ''); ?>" placeholder="Ej: 1.75">
+                </label>
+                <?php if (!empty($aErrores["altura"])) { ?>
+                    <span style="color: red"><?php echo $aErrores["altura"]; ?></span>
+                <?php } ?>
+                </div>
+                <div class="form-group">
                 <label for="aceptaCondiciones">
                     <input type="checkbox" id="aceptaCondiciones" name="aceptaCondiciones" value="1" <?php echo (isset($_REQUEST['aceptaCondiciones']) ? 'checked' : ''); ?>> Acepto los términos y condiciones
                 </label>
                 <?php if (!empty($aErrores["aceptaCondiciones"])) { ?>
                     <span style="color: red"><?php echo $aErrores["aceptaCondiciones"]; ?></span>
                 <?php } ?>
-                <br>
+                </div>
+                <div class="form-group">
                 <label for="fechaActual">Fecha Actual:
                     <input type="text" id="fechaActual" name="fechaActual" value="<?php echo date_format($oFechaActual, 'd-m-Y') ?>" style="background-color: lightgray" disabled>
                 </label>
-                <br>
+                </div>
+                <div class="form-group">
                 <input name="enviar" type="submit" value="Enviar">
+                </div>
             </form>
             <?php
                 }
@@ -161,4 +190,3 @@
         </footer>
     </body>
 </html>
-

@@ -150,8 +150,7 @@
                         <td>Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php. El profesor facilitará a los alumnos la clase
                             AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida.
                         </td>
-                        <td></td>
-                        <td><a href="mostrarcodigo/muestraEjercicio20.php"><img src="doc/show.png" alt="show"></a></td>
+                        <td colspan="2"><a href="mostrarcodigo/muestraEjercicio20.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>21</td>
