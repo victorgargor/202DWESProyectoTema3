@@ -17,7 +17,7 @@
             <?php
                 /**
                  * @author Víctor García Gordón
-                 * @version Fecha de última modificación 16/10/2024
+                 * @version Fecha de última modificación 20/10/2024
                  */
 
                 //Incluimos la libreria de validacion de formularios
