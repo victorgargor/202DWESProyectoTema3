@@ -38,12 +38,20 @@ form input[type="text"]#edad {
     width: 35px; 
 }
 
+form input[type="text"]#notaCurso {
+    width: 35px; 
+}
+
 form input[type="text"]#fechaActual {
     width: 67px; 
     margin-left: auto; 
 }
 
 form input[type="text"]#nombre {
+    height: 12px; 
+}
+
+form input[type="text"]#nombreApellidos {
     height: 12px; 
 }
 

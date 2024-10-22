@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="" type="text/css">
+        <link rel="stylesheet" href="../webroot/css/formularios.css" type="text/css">
         <title>Víctor García Gordón</title>
     </head>
     <body>
@@ -43,9 +43,9 @@
                 $aRespuestas = [
                     'nombreApellidos' => '',
                     'fechaNacimiento' => '',
-                    'sentimientosHoy' => '',
-                    'notaCurso' => '',
-                    'planesVacaciones' => '',
+                    'sentimientosHoy' => null,
+                    'notaCurso' => 0,
+                    'planesVacaciones' => null,
                     'estadoAnimo' => '', 
                 ];
 
@@ -54,7 +54,9 @@
                         //Para cada campo del formulario: Validar entrada y actuar en consecuencia
                         $aErrores['nombreApellidos'] = validacionFormularios::comprobarAlfabetico($_REQUEST['nombreApellidos'], 1000, 1, OBLIGATORIO);         
                         $aErrores['fechaNacimiento'] = validacionFormularios::validarFecha($_REQUEST['fechaNacimiento'], date_format($oFechaActual, 'd-m-Y'), '01/01/1900', OBLIGATORIO);
+                        $aErrores['sentimientosHoy'] = null;
                         $aErrores['notaCurso'] = validacionFormularios::comprobarEntero($_REQUEST['notaCurso'], 10, 0, OBLIGATORIO);
+                        $aErrores['planesVacaciones'] = null;
                         $aErrores['estadoAnimo'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['estadoAnimo'], 1000, 1, OBLIGATORIO);
 
                         //Recorremos el array de errores
@@ -76,9 +78,9 @@
                         $aRespuestas = [
                                 'nombreApellidos' => $_REQUEST['nombreApellidos'],
                                 'fechaNacimiento' => $_REQUEST['fechaNacimiento'],
-                                'sentimientosHoy' => $_REQUEST['notaCurso'],
-                                'notaCurso' => '',
-                                'planesVacaciones' => '',
+                                'sentimientosHoy' => $_REQUEST['sentimientosHoy'],
+                                'notaCurso' => $_REQUEST['notaCurso'],
+                                'planesVacaciones' => $_REQUEST['planesVacaciones'],
                                 'estadoAnimo' => $_REQUEST['estadoAnimo'], 
                         ];
 
@@ -113,9 +115,23 @@
                 <?php } ?>
                 </div>
                 <div class="form-group">
-                <label for="sentimientosHoy">¿Cómo te sientes hoy?
-                    
-                </label>
+                <label for="sentimientosHoy">¿Cómo te sientes hoy?</label>
+                <br>
+                <input type="radio" id="muy_mal" name="sentimientosHoy" value="muy_mal">
+                <label for="sentimientosHoy">MUY MAL</label>
+                <br>
+                <input type="radio" id="mal" name="sentimientosHoy" value="mal">
+                <label for="sentimientosHoy">MAL</label>
+                <br>
+                <input type="radio" id="regular" name="sentimientosHoy" value="regular">
+                <label for="sentimientosHoy">REGULAR</label>
+                <br>
+                <input type="radio" id="bien" name="sentimientosHoy" value="bien">
+                <label for="sentimientosHoy">BIEN</label>
+                <br>
+                <input type="radio" id="muy_bien" name="sentimientosHoy" value="muy_bien">
+                <label for="sentimientosHoy">MUY BIEN</label>
+                <br>          
                 </div>
                 <div class="form-group">
                 <label for="notaCurso">¿Cómo va el curso? [0-10]: 
@@ -127,12 +143,17 @@
                 </div>
                 <div class="form-group">
                 <label for="planesVacaciones">¿Cómo se presentan las vacaciones de navidad? 
-                    
+                    <select id="planesVacaciones" name="planesVacaciones" required style="background-color: yellow">
+                            <option value="ni_idea">Ni idea</option>
+                            <option value="con_la_familia">Con la familia</option>
+                            <option value="trabajando">Trabajando</option>
+                            <option value="estudiando_dwes">Estudiando DWES</option>
+                    </select>
                 </label>         
                 </div>
                 <div class="form-group">
-                <label for="estadoAnimo">Describe brevemente tu estado de ánimo: 
-                <textarea id="estadoAnimo" name="estadoAnimo" style="background-color: yellow" rows="4" cols="50"></textarea>
+                <label for="estadoAnimo">Describe brevemente tu estado de ánimo:
+                <textarea id="estadoAnimo" name="estadoAnimo" required style="background-color: yellow" rows="4" cols="50"></textarea>
                 </label>
                 <?php if (!empty($aErrores["estadoAnimo"])) { ?>
                 <span style="color: red"><?php echo $aErrores["estadoAnimo"]; ?></span>
