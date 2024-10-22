@@ -197,6 +197,12 @@
                         <td></td>
                         <td></td>
                     </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>Ejercicio extra formulario</td>
+                        <td><a href="codigoPHP/ejercicio27.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio27.php"><img src="doc/show.png" alt="show"></a></td>
+                    </tr>
                 </table>
             </nav>       
         </main>

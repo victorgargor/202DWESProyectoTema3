@@ -17,7 +17,7 @@
             <?php
                 /**
                  * @author Víctor García Gordón
-                 * @version Fecha de última modificación 21/10/2024
+                 * @version Fecha de última modificación 22/10/2024
                  */
 
                 //Incluimos la libreria de validacion de formularios
@@ -42,7 +42,7 @@
                 $aRespuestas = [
                     'nombre' => '',
                     'fechaNacimiento' => '',
-                    'fechaActual' => '' 
+                    'fechaActual' => $oFechaActual 
                 ];
 
                 // Verifica si el formulario ha sido enviado
@@ -76,12 +76,8 @@
                         echo '<h2 class="respuestas-header">Respuestas:</h2>';
                         foreach ($aRespuestas as $key => $value) {
                             echo '<div class="respuesta-item">';
-                            if ($key == 'fechaActual') {
-                                // Formateamos la fecha cuando la mostramos
-                                echo "$key : " . $value->format('d-m-Y') . "<br>";
-                            } else {
-                                echo "$key : $value <br>";
-                            }
+                            //Se hace una excepción para formatear la salida de los objetos de tipo fecha
+                            echo ($value instanceof DateTime) ? "$key : " . $value->format('d-m-Y') . "<br>" : "$key : $value <br>";
                             echo '</div>';
                         }
                         echo '</div>'; 
@@ -99,7 +95,7 @@
                 </div>
                 <div class="form-group">
                 <label for="fechaNacimiento">Fecha de nacimiento: 
-                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required style="background-color: white">
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" style="background-color: white">
                 </label>
                 <?php if (!empty($aErrores["fechaNacimiento"])) { ?>
                     <span style="color: red"><?php echo $aErrores["fechaNacimiento"]; ?></span>

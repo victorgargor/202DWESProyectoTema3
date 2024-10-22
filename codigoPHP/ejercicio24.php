@@ -17,7 +17,7 @@
             <?php
                 /**
                  * @author Víctor García Gordón
-                 * @version Fecha de última modificación 21/10/2024
+                 * @version Fecha de última modificación 22/10/2024
                  */
 
                 //Incluimos la libreria de validacion de formularios
@@ -47,12 +47,12 @@
                 $aRespuestas = [
                     'nombre' => '',
                     'fechaNacimiento' => '',
-                    'edad' => '',
+                    'edad' => null,
                     'email' => '',
                     'telefono' => '',
-                    'altura' => '',
-                    'aceptaCondiciones' => '', 
-                    'fechaActual' => '' 
+                    'altura' => null,
+                    'aceptaCondiciones' => null, 
+                    'fechaActual' => $oFechaActual 
                 ];
 
                 // Verifica si el formulario ha sido enviado
@@ -100,12 +100,8 @@
                         echo '<h2 class="respuestas-header">Respuestas:</h2>';
                         foreach ($aRespuestas as $key => $value) {
                             echo '<div class="respuesta-item">';
-                            if ($key == 'fechaActual') {
-                                // Formateamos la fecha cuando la mostramos
-                                echo "$key : " . $value->format('d-m-Y') . "<br>";
-                            } else {
-                                echo "$key : $value <br>";
-                            }
+                            //Se hace una excepción para formatear la salida de los objetos de tipo fecha
+                            echo ($value instanceof DateTime) ? "$key : " . $value->format('d-m-Y') . "<br>" : "$key : $value <br>";                           
                             echo '</div>';
                         }
                         echo '</div>'; 
@@ -175,7 +171,7 @@
                 </label>
                 </div>
                 <div class="form-group">
-                <input name="enviar" type="submit" value="Enviar">
+                <input id="enviar" name="enviar" type="submit" value="Enviar">
                 </div>
             </form>
             <?php
