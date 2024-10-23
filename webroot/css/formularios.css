@@ -52,6 +52,7 @@ form input[type="text"]#nombre {
 }
 
 form input[type="text"]#nombreApellidos {
+    width: 300px;
     height: 12px; 
 }
 

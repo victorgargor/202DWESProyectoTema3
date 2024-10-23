@@ -74,6 +74,9 @@
 
                 //Tratamiento del formulario
                 if ($entradaOK) {
+                        //Variable que recoge la fecha de nacimiento y crea un objeto DateTime en el formato especificado
+                        $oFechaNacimiento = DateTime::createFromFormat('Y-m-d', $_REQUEST['fechaNacimiento']);
+                        $edadActual = date_diff($oFechaNacimiento, $oFechaActual)->y; // Obtiene los años de diferencia
                         //Almacenamos el valor en el array
                         $aRespuestas = [
                                 'nombreApellidos' => $_REQUEST['nombreApellidos'],
@@ -86,13 +89,12 @@
 
                         //Mostramos las respuestas por pantalla
                         echo '<div class="respuestas-container">';
-                        echo '<h2 class="respuestas-header">Respuestas:</h2>';
-                        foreach ($aRespuestas as $key => $value) {
-                            echo '<div class="respuesta-item">';
-                            //Se hace una excepción para formatear la salida de los objetos de tipo fecha
-                            echo ($value instanceof DateTime) ? "$key : " . $value->format('d-m-Y') . "<br>" : "$key : $value <br>";                           
-                            echo '</div>';
-                        }
+                        echo '<h2 class="respuestas-header">RESULTADOS DE LA ENCUESTA - INFORME DE SATISFACCIÓN PERSONAL:</h2>';
+                        echo 'Hoy '.date_format($oFechaActual, 'd F').' a las '.date_format($oFechaActual, 'H:i').'.<br>';
+                        echo 'D. '.$_REQUEST['nombreApellidos'].' nacido hace '.$edadActual.' años se siente '.$_REQUEST['sentimientosHoy'].'.<br>';
+                        echo 'Valora su curso actual con '.$_REQUEST['notaCurso'].' sobre 10.<br>';
+                        echo 'Estas navidades las dedicará a '.$_REQUEST['planesVacaciones'].'.<br>';
+                        echo 'Y, además, opina que: '.$_REQUEST['estadoAnimo'].'.<br>';
                         echo '</div>'; 
                 } else {
                         //Mostrar el formulario hasta que lo rellenemos correctamente
@@ -117,7 +119,7 @@
                 <div class="form-group">
                 <label for="sentimientosHoy">¿Cómo te sientes hoy?</label>
                 <br>
-                <input type="radio" id="muy_mal" name="sentimientosHoy" value="muy_mal">
+                <input type="radio" id="muy_mal" name="sentimientosHoy" value="muy mal">
                 <label for="sentimientosHoy">MUY MAL</label>
                 <br>
                 <input type="radio" id="mal" name="sentimientosHoy" value="mal">
@@ -144,12 +146,13 @@
                 <div class="form-group">
                 <label for="planesVacaciones">¿Cómo se presentan las vacaciones de navidad? 
                     <select id="planesVacaciones" name="planesVacaciones" required style="background-color: yellow">
-                            <option value="ni_idea">Ni idea</option>
-                            <option value="con_la_familia">Con la familia</option>
-                            <option value="trabajando">Trabajando</option>
-                            <option value="estudiando_dwes">Estudiando DWES</option>
+                            <option value="no sabe" <?php if (isset($_REQUEST['planesVacaciones'])){echo 'selected';}?>>Ni idea</option>
+                            <option value="estar con la familia" <?php if (isset($_REQUEST['planesVacaciones'])){echo 'selected';}?>>Con la familia</option>
+                            <option value="trabajar" <?php if (isset($_REQUEST['planesVacaciones'])){echo 'selected';}?>>Trabajando</option>
+                            <option value="estudiar DWES" <?php if (isset($_REQUEST['planesVacaciones'])){echo 'selected';}?>>Estudiando DWES</option>
                     </select>
-                </label>         
+                </label>
+                <?php echo ($aErrores['planesVacaciones'] != '' ? "<span style='color:red; padding: 0; margin: 0;'> ".$aErrores['planesVacaciones']." </span>" : ''); ?>
                 </div>
                 <div class="form-group">
                 <label for="estadoAnimo">Describe brevemente tu estado de ánimo:
