@@ -187,8 +187,8 @@
                     <tr>
                         <td>25</td>
                         <td>Trabajar en PlantillaFormulario.php mi plantilla para hacer formularios como churros.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio25.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio25.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>26</td>
