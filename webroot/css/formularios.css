@@ -1,81 +1,103 @@
+/* Hacer que el formulario ocupe toda la pantalla */
 form {
-    width: 100%;
-    max-width: 600px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 100%; /* Se adapta al 100% del ancho */
     background-color: #f0f0f0;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
+    margin: 20px 0; /* Espacio alrededor del formulario */
 }
 
+/* Estilo de cada grupo de formulario */
 .form-group {
     display: flex;
-    align-items: center;
-    justify-content: space-between; 
+    flex-direction: column; /* Los elementos se alinean en columna para mejor ajuste */
     margin-bottom: 15px;
 }
 
+/* Etiquetas del formulario */
 form label {
-    width: 30%;
     font-size: 1em;
     color: #333333;
-    white-space: nowrap; 
+    margin-bottom: 5px; /* Añadido un margen debajo de la etiqueta */
 }
 
+/* Estilo de los campos de entrada */
 form input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
     background-color: #ffffff;
-    margin-left: 10px;
 }
 
-form input[type="text"]#altura {
-    width: 47px; 
+/*Tamaños input personalizados*/
+form input[type="text"]#alfabeticoObligatorio,
+form input[type="text"]#alfabeticoOpcional,
+form input[type="text"]#alfanumericoObligatorio,
+form input[type="text"]#alfanumericoOpcional,
+form input[type="email"]#emailObligatorio,
+form input[type="email"]#emailOpcional{
+    width: 350px;
+    height: 10px;
 }
 
-form input[type="text"]#edad {
-    width: 35px; 
+form input[type="text"]#enteroObligatorio,
+form input[type="text"]#enteroOpcional,
+form input[type="text"]#floatObligatorio,
+form input[type="text"]#floatOpcional,
+form input[type="text"]#cpObligatorio,
+form input[type="text"]#cpOpcional{
+    width: 60px;
+    height: 10px;
 }
 
-form input[type="text"]#notaCurso {
-    width: 35px; 
+form input[type="text"]#urlObligatorio,
+form input[type="text"]#urlOpcional,
+form input[type="text"]#dniObligatorio,
+form input[type="text"]#dniOpcional,
+form input[type="password"]#passwordObligatorio,
+form input[type="password"]#passwordOpcional,
+form input[type="tel"]#telefonoObligatorio,
+form input[type="tel"]#telefonoOpcional{
+    width: 200px;
+    height: 10px;
 }
 
-form input[type="text"]#fechaActual {
-    width: 67px; 
-    margin-left: auto; 
+form select#listaObligatorio{
+    width: 200px;
+    height: 20px;
 }
 
-form input[type="text"]#nombre {
-    height: 12px; 
+form textarea#textAreaObligatorio,
+form textarea#textAreaOpcional{
+    width: 800px;
+    height: 80px;
 }
 
-form input[type="text"]#nombreApellidos {
-    width: 300px;
-    height: 12px; 
+form input[type="date"]#fechaObligatorio,
+form input[type="date"]#fechaOpcional{
+    width: 100px;
+    height: 10px;
 }
 
-form input[type="email"]#email {
-    width: 220px;
-    height: 12px;
+form input[type="file"]#archivoObligatorio,
+form input[type="file"]#archivoOpcional{
+    width: 320px;
+    height: 20px;
 }
 
-form input[type="tel"]#telefono {
-    width: 70px;
-    height: 12px; 
+form input[type="color"]#colorOpcional{
+    width: 90px;
+    height: 45px;
 }
 
-form span {
-    color: red;
-    font-size: 0.9em;
-    margin-left: 10px;
+form input[type="range"]#rangoOpcional{
+    width: 200px;
+    height: 25px;
 }
 
-form input[type="checkbox"] {
-    margin-left: 10px;
-}
-
+/* Estilo del botón de envío */
 form input[type="submit"] {
     background-color: #333333;
     color: #ffffff;
@@ -84,17 +106,37 @@ form input[type="submit"] {
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 200px;
+    height: 35px;
 }
 
+/* Hover en el botón */
 form input[type="submit"]:hover {
     background-color: #555555;
 }
 
+/* Para campos deshabilitados */
 form input[disabled] {
     background-color: lightgray;
     cursor: not-allowed;
 }
 
+/* Ajustes en dispositivos móviles */
+@media screen and (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+    .form-group {
+        flex-direction: column; /* Aseguramos que los elementos se alineen en columna en pantallas más pequeñas */
+    }
+
+    form input[type="submit"] {
+        padding: 15px;
+    }
+}
+
+/* Estilos del header */
 header {
     text-align: center;
     background-color: #f0f0f0;
@@ -102,6 +144,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Título del header */
 header h1 {
     font-size: 1.8em;
     font-weight: 400;
@@ -109,6 +152,7 @@ header h1 {
     color: #333333;
 }
 
+/* Estilos del footer */
 footer {
     background-color: #f0f0f0;
     padding: 10px;
@@ -123,13 +167,7 @@ footer {
     flex-direction: column;
 }
 
-footer div {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
+/* Links en el footer */
 footer a {
     color: #000000;
     text-decoration: none;
@@ -140,65 +178,59 @@ footer a:hover {
     opacity: 0.8;
 }
 
-footer a img {
-    width: 30px;
-    height: auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
 
-footer a:hover img {
-    transform: scale(1.1);
-    opacity: 0.8;
-}
-
+/* Respuestas container: distribución en grid */
 .respuestas-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 1200px; /* Limita el ancho total */
     background-color: #f9f9f9;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     font-family: Arial, sans-serif;
-    text-align: center; 
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas adaptables */
+    gap: 20px; /* Espacio entre los elementos */
 }
 
+/* Estilo para cada respuesta individual */
 .respuesta-item {
-    background-color: #f0f0f0; 
+    background-color: #ffffff;
+    border-left: 4px solid #4CAF50;
     border-radius: 5px;
     padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
-    display: inline-block;
-    width: 100%;
-    max-width: 550px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     text-align: left;
+    transition: transform 0.2s ease; /* Animación sutil en hover */
 }
 
+.respuesta-item:hover {
+    transform: translateY(-5px); /* Elevación en hover */
+}
+
+/* Etiquetas dentro de cada respuesta */
 .respuesta-item label {
     font-size: 1em;
     color: #333;
     font-weight: bold;
-    display: block;
     margin-bottom: 5px;
 }
 
+/* Estilo para el contenido de la respuesta */
 .respuesta-item span {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #555;
     word-wrap: break-word;
 }
 
-.respuesta-item span.error {
-    color: red;
-    font-weight: bold;
-}
-
+/* Título para el bloque de respuestas */
 .respuestas-header {
     text-align: center;
     font-size: 1.5em;
     color: #333;
     margin-bottom: 20px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
 }
