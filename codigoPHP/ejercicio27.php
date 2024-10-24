@@ -15,7 +15,7 @@
             <?php
                 /**
                  * @author Víctor García Gordón
-                 * @version Fecha de última modificación 21/10/2024
+                 * @version Fecha de última modificación 23/10/2024
                  */
 
                 //Incluimos la libreria de validacion de formularios
@@ -28,6 +28,14 @@
                 //Inicialización de las variables
                 $entradaOK = true; //Variable que nos indica que todo va bien
                 $oFechaActual = new DateTime("now"); //Variable que recoge la fecha actual
+                
+                //Declaración de un array con las opciones para una lista
+                $aLista = [
+                    'opc1' => 'Ni idea',
+                    'opc2' => 'Con la familia',
+                    'opc3' => 'Trabajando',
+                    'opc4' => 'Estudiando DWES'
+                ];
                 
                 //Array donde recogemos los mensajes de error
                 $aErrores = [
@@ -54,10 +62,12 @@
                         //Para cada campo del formulario: Validar entrada y actuar en consecuencia
                         $aErrores['nombreApellidos'] = validacionFormularios::comprobarAlfabetico($_REQUEST['nombreApellidos'], 1000, 1, OBLIGATORIO);         
                         $aErrores['fechaNacimiento'] = validacionFormularios::validarFecha($_REQUEST['fechaNacimiento'], date_format($oFechaActual, 'd-m-Y'), '01/01/1900', OBLIGATORIO);
-                        $aErrores['sentimientosHoy'] = null;
                         $aErrores['notaCurso'] = validacionFormularios::comprobarEntero($_REQUEST['notaCurso'], 10, 0, OBLIGATORIO);
-                        $aErrores['planesVacaciones'] = null;
+                        $aErrores['planesVacaciones'] = validacionFormularios::validarElementoEnLista($_REQUEST['planesVacaciones'], $aLista);
                         $aErrores['estadoAnimo'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['estadoAnimo'], 1000, 1, OBLIGATORIO);
+                        
+                        //En los if se comprueba si se ha seleccionado algo sino se envia el mensaje de error. Es la manera de hacerlos obligatorios
+                        if (!isset($_REQUEST['sentimientosHoy'])) {$aErrores['sentimientosHoy'] = "Debes escoger al menos 1 opción.";}
 
                         //Recorremos el array de errores
                         foreach ($aErrores as $clave => $valor) {
@@ -119,21 +129,22 @@
                 <div class="form-group">
                 <label for="sentimientosHoy">¿Cómo te sientes hoy?</label>
                 <br>
-                <input type="radio" id="muy_mal" name="sentimientosHoy" value="muy mal">
+                <input type="radio" id="muy_mal" name="sentimientosHoy" value="muy mal" <?php if(is_null($aErrores['sentimientosHoy']) && isset($_REQUEST['sentimientosHoy']) && $_REQUEST['sentimientosHoy']=='muy mal'){ echo 'checked';}?>>
                 <label for="sentimientosHoy">MUY MAL</label>
                 <br>
-                <input type="radio" id="mal" name="sentimientosHoy" value="mal">
+                <input type="radio" id="mal" name="sentimientosHoy" value="mal" <?php if(is_null($aErrores['sentimientosHoy']) && isset($_REQUEST['sentimientosHoy']) && $_REQUEST['sentimientosHoy']=='mal'){ echo 'checked';}?>>
                 <label for="sentimientosHoy">MAL</label>
                 <br>
-                <input type="radio" id="regular" name="sentimientosHoy" value="regular">
+                <input type="radio" id="regular" name="sentimientosHoy" value="regular" <?php if(is_null($aErrores['sentimientosHoy']) && isset($_REQUEST['sentimientosHoy']) && $_REQUEST['sentimientosHoy']=='regular'){ echo 'checked';}?>>
                 <label for="sentimientosHoy">REGULAR</label>
                 <br>
-                <input type="radio" id="bien" name="sentimientosHoy" value="bien">
+                <input type="radio" id="bien" name="sentimientosHoy" value="bien" <?php if(is_null($aErrores['sentimientosHoy']) && isset($_REQUEST['sentimientosHoy']) && $_REQUEST['sentimientosHoy']=='bien'){ echo 'checked';}?>>
                 <label for="sentimientosHoy">BIEN</label>
                 <br>
-                <input type="radio" id="muy_bien" name="sentimientosHoy" value="muy_bien">
+                <input type="radio" id="muy_bien" name="sentimientosHoy" value="muy bien" <?php if(is_null($aErrores['sentimientosHoy']) && isset($_REQUEST['sentimientosHoy']) && $_REQUEST['radioButtonObligatorio']=='muy bien'){ echo 'checked';}?>>
                 <label for="sentimientosHoy">MUY BIEN</label>
-                <br>          
+                <br>
+                <?php if (!empty($aErrores['sentimientosHoy'])) { ?> <span style="color: red"><?php echo $aErrores['sentimientosHoy']; ?></span> <?php } ?>
                 </div>
                 <div class="form-group">
                 <label for="notaCurso">¿Cómo va el curso? [0-10]: 
@@ -146,10 +157,10 @@
                 <div class="form-group">
                 <label for="planesVacaciones">¿Cómo se presentan las vacaciones de navidad? 
                     <select id="planesVacaciones" name="planesVacaciones" required style="background-color: yellow">
-                            <option value="no sabe" <?php if (isset($_REQUEST['planesVacaciones'])){echo 'selected';}?>>Ni idea</option>
-                            <option value="estar con la familia" <?php if (isset($_REQUEST['planesVacaciones'])){echo 'selected';}?>>Con la familia</option>
-                            <option value="trabajar" <?php if (isset($_REQUEST['planesVacaciones'])){echo 'selected';}?>>Trabajando</option>
-                            <option value="estudiar DWES" <?php if (isset($_REQUEST['planesVacaciones'])){echo 'selected';}?>>Estudiando DWES</option>
+                            <option value="<?php echo $aLista['opc1']?>"><?php echo $aLista['opc1']?></option>
+                            <option value="<?php echo $aLista['opc2']?>"><?php echo $aLista['opc2']?></option>
+                            <option value="<?php echo $aLista['opc3']?>"><?php echo $aLista['opc3']?></option>
+                            <option value="<?php echo $aLista['opc4']?>"><?php echo $aLista['opc4']?></option>
                     </select>
                 </label>
                 <?php echo ($aErrores['planesVacaciones'] != '' ? "<span style='color:red; padding: 0; margin: 0;'> ".$aErrores['planesVacaciones']." </span>" : ''); ?>

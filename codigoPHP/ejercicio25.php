@@ -14,47 +14,45 @@
             <?php
                 /**
                  * @author Víctor García Gordón
-                 * @version Fecha de última modificación 23/10/2024
+                 * @version Fecha de última modificación 24/10/2024
                  */
 
                 //Incluimos la libreria de validacion de formularios
                 require_once('../core/231018libreriaValidacion.php');
                 
                 //Definición de constantes que utilizaremos en prácticamente todos los métodos de la librería
-                define("OBLIGATORIO", 1);
-                define("OPCIONAL", 0);
+                define('OBLIGATORIO', 1);
+                define('OPCIONAL', 0);
                 //Definición de constantes para comprobarAlfabético
-                define("T_MAX_ALFABETICO",1000);
-                define("T_MIN_ALFABETICO",1);
+                define('T_MAX_ALFABETICO',1000);
+                define('T_MIN_ALFABETICO',1);
                 //Definición de constantes para comprobarAlfaNumérico
-                define("T_MAX_ALFANUMERICO",1000);
-                define("T_MIN_ALFANUMERICO",1);
-                //Definición de constantes para comprobarEntero
-                define("T_MAX_ENTERO", PHP_INT_MAX);
-                define("T_MIN_ENTERO", PHP_INT_MIN);
-                //Definición de constantes para comprobarFloat
-                define("T_MAX_FLOAT", PHP_FLOAT_MAX);
-                define("T_MIN_FLOAT", PHP_FLOAT_MIN);
+                define('T_MAX_ALFANUMERICO',1000);
+                define('T_MIN_ALFANUMERICO',1);
                 //Definición de constantes para validarFecha
-                define("FECHA_MAX",date('d-m-Y'));
-                define("FECHA_MIN","01/01/1900");
+                define('FECHA_MAX',date('d-m-Y'));
+                define('FECHA_MIN',"01/01/1900");
                 //Definición de constantes para validarPassword
-                define("MAX_PASS",16);
-                define("MIN_PASS",2);
-                define("DEBIL",1);//La contraseña admite solo letras
-                define("NORMAL",2);//La contraseña admite numeros y letras
-                define("FUERTE",3);//La contraseña admite si contiene al menos una letra mayúscula y un número
-                //Definición de constantes para validarNombreArchivo
-                define("T_MAX_ARCHIVO",150);
-                define("T_MIN_ARCHIVO",4);
+                define('MAX_PASS',16);
+                define('MIN_PASS',2);
+                define('DEBIL',1);//La contraseña admite solo letras
+                define('NORMAL',2);//La contraseña admite numeros y letras
+                define('FUERTE',3);//La contraseña admite si contiene al menos una letra mayúscula y un número
                 //Definición de constantes para comprobarAlfaNumérico pero para el textArea
-                define("T_MAX_TEXTAREA",500);
-                define("T_MIN_TEXTAREA",1);
-                
+                define('T_MAX_TEXTAREA',500);
+                define('T_MIN_TEXTAREA',1);               
                 //Declaración de un array con las opciones para listaObligatorio
-                $aOpciones = ['ele1','ele2','ele3'];
+                $aLista = [
+                    'opc1' => 'elemento 1',
+                    'opc2' => 'elemento 2',
+                    'opc3' => 'elemento 3'
+                ];
                 //Declaración de un array con las extensiones para validarNombreArchivo
-                $aExtensiones = ['ext1','ext2','ext3'];
+                $aExtensiones = [
+                    'ext1' => 'php',
+                    'ext2' => 'pdf',
+                    'ext3' => 'txt'
+                ];
 
                 //Inicialización de las variables
                 $entradaOK = true; //Variable que nos indica que todo va bien
@@ -84,16 +82,14 @@
                     'passwordOpcional' => '',
                     'listaObligatorio' => '',
                     'telefonoObligatorio' => '',
-                    'telefonOpcional' => '',
-                    'archivoObligatorio' => '',
-                    'archivoOpcional' => '',
+                    'telefonoOpcional' => '',
                     'textAreaObligatorio' => '',
                     'textAreaOpcional' => '',
                     'radioButtonObligatorio' => '',
                     'checkBoxObligatorio' => '',
                     'rangoObligatorio' => '',
                     'rangoOpcional' => '',
-                    //'colorOpcional' => ''
+                    'colorOpcional' => ''
                 ]; 
                 
                 //Array donde recogeremos las respuestas correctas (si $entradaOK)
@@ -120,16 +116,14 @@
                     'passwordOpcional' => '',
                     'listaObligatorio' => '',
                     'telefonoObligatorio' => '',
-                    'telefonOpcional' => '',
-                    'archivoObligatorio' => '',
-                    'archivoOpcional' => '',
+                    'telefonoOpcional' => '',
                     'textAreaObligatorio' => '',
                     'textAreaOpcional' => '',
                     'radioButtonObligatorio' => '',
                     'checkBoxObligatorio' => '',
                     'rangoObligatorio' => '',
                     'rangoOpcional' => '',
-                    //'colorOpcional' => '' 
+                    'colorOpcional' => '' 
                 ];
 
                 // Verifica si el formulario ha sido enviado
@@ -141,11 +135,11 @@
                         $aErrores = ['alfanumericoObligatorio' => validacionFormularios::comprobarAlfanumerico($_REQUEST['alfanumericoObligatorio'], T_MAX_ALFANUMERICO, T_MIN_ALFANUMERICO, OBLIGATORIO)];
                         $aErrores = ['alfanumericoOpcional' => validacionFormularios::comprobarAlfanumerico($_REQUEST['alfanumericoOpcional'], T_MAX_ALFANUMERICO, T_MIN_ALFANUMERICO, OPCIONAL)];
 
-                        $aErrores = ['enteroObligatorio' => validacionFormularios::comprobarEntero($_REQUEST['enteroObligatorio'], T_MAX_ENTERO, T_MIN_ENTERO, OBLIGATORIO)];
-                        $aErrores = ['enteroOpcional' => validacionFormularios::comprobarEntero($_REQUEST['enteroOpcional'], T_MAX_ENTERO, T_MIN_ENTERO, OPCIONAL)];
+                        $aErrores = ['enteroObligatorio' => validacionFormularios::comprobarEntero($_REQUEST['enteroObligatorio'], PHP_INT_MAX, PHP_INT_MIN, OBLIGATORIO)];
+                        $aErrores = ['enteroOpcional' => validacionFormularios::comprobarEntero($_REQUEST['enteroOpcional'], PHP_INT_MAX, PHP_INT_MIN, OPCIONAL)];
 
-                        $aErrores = ['floatObligatorio' => validacionFormularios::comprobarFloat($_REQUEST['floatObligatorio'], T_MAX_FLOAT, T_MIN_FLOAT, OBLIGATORIO)];
-                        $aErrores = ['floatOpcional' => validacionFormularios::comprobarFloat($_REQUEST['floatOpcional'], T_MAX_FLOAT, T_MIN_FLOAT, OPCIONAL)];
+                        $aErrores = ['floatObligatorio' => validacionFormularios::comprobarFloat($_REQUEST['floatObligatorio'], PHP_FLOAT_MAX, PHP_FLOAT_MIN, OBLIGATORIO)];
+                        $aErrores = ['floatOpcional' => validacionFormularios::comprobarFloat($_REQUEST['floatOpcional'], PHP_FLOAT_MAX, PHP_FLOAT_MIN, OPCIONAL)];
 
                         $aErrores = ['emailObligatorio' => validacionFormularios::validarEmail($_REQUEST['emailObligatorio'], OBLIGATORIO)];
                         $aErrores = ['emailOpcional' => validacionFormularios::validarEmail($_REQUEST['emailOpcional'], OPCIONAL)];
@@ -165,24 +159,19 @@
                         $aErrores = ['passwordObligatorio' => validacionFormularios::validarPassword($_REQUEST['passwordObligatorio'], MAX_PASS, MIN_PASS, DEBIL, OBLIGATORIO)];
                         $aErrores = ['passwordOpcional' => validacionFormularios::validarPassword($_REQUEST['passwordOpcional'],MAX_PASS, MIN_PASS, NORMAL, OPCIONAL)];
                         
-                        $aErrores = ['listaObligatorio' => validacionFormularios::validarElementoEnLista($_REQUEST['listaObligatorio'], $aOpciones)];
+                        $aErrores = ['listaObligatorio' => validacionFormularios::validarElementoEnLista($_REQUEST['listaObligatorio'], $aLista)];
                         
                         $aErrores = ['telefonoObligatorio' => validacionFormularios::validarTelefono($_REQUEST['telefonoObligatorio'], OBLIGATORIO)];
-                        $aErrores = ['telefonoOpcional' => validacionFormularios::validarTelefono($_REQUEST['telefonoOpcional'], OPCIONAL)];
-                        
-                        $aErrores = ['archivoObligatorio' => validacionFormularios::validarNombreArchivo($_REQUEST['archivoObligatorio'], $aExtensiones, T_MAX_ARCHIVO, T_MIN_ARCHIVO, OBLIGATORIO)];
-                        $aErrores = ['archivoOpcional' => validacionFormularios::validarNombreArchivo($_REQUEST['archivoOpcional'], $aExtensiones, T_MAX_ARCHIVO, T_MIN_ARCHIVO, OPCIONAL)];
+                        $aErrores = ['telefonoOpcional' => validacionFormularios::validarTelefono($_REQUEST['telefonoOpcional'], OPCIONAL)];                   
                         
                         $aErrores = ['textAreaObligatorio' => validacionFormularios::comprobarAlfanumerico($_REQUEST['textAreaObligatorio'], T_MAX_TEXTAREA, T_MIN_TEXTAREA, OBLIGATORIO)];
                         $aErrores = ['textAreaOpcional' => validacionFormularios::comprobarAlfanumerico($_REQUEST['textAreaOpcional'], T_MAX_TEXTAREA, T_MIN_TEXTAREA, OPCIONAL)];
                         
-                        $aErrores = ['radioButtonObligatorio' => NULL];
+                        $aErrores = ['radioButtonObligatorio' => null];
                         
-                        $aErrores = ['rangoObligatorio' => validacionFormularios::comprobarEntero($_REQUEST['rangoObligatorio'], T_MAX_ENTERO, T_MIN_ENTERO, OBLIGATORIO)];
-                        $aErrores = ['rangoOpcional' => validacionFormularios::comprobarEntero($_REQUEST['rangoOpcional'], T_MAX_ENTERO, T_MIN_ENTERO, OPCIONAL)];
-                        
-                        //$aErrores = ['colorOpcional' => validacionFormularios::validarColor($_REQUEST['colorOpcional'], OPCIONAL)];
-                        
+                        $aErrores = ['rangoObligatorio' => validacionFormularios::comprobarEntero($_REQUEST['rangoObligatorio'], PHP_INT_MAX, PHP_INT_MIN, OBLIGATORIO)];
+                        $aErrores = ['rangoOpcional' => validacionFormularios::comprobarEntero($_REQUEST['rangoOpcional'],  PHP_INT_MAX, PHP_INT_MIN, OPCIONAL)];
+                                                         
                         //En los if se comprueba si se ha seleccionado algo sino se envia el mensaje de error. Es la manera de hacerlos obligatorios
                         if (!isset($_REQUEST['radioButtonObligatorio'])) {$aErrores['radioButtonObligatorio'] = "Debes escoger al menos 1 opción.";}
                         if (!isset($_REQUEST['checkBoxObligatorio'])) {$aErrores['checkBoxObligatorio'] = "Debes escoger al menos 1 opción.";}
@@ -226,16 +215,14 @@
                             'passwordOpcional' => $_REQUEST['passwordOpcional'],
                             'listaObligatorio' => $_REQUEST['listaObligatorio'],
                             'telefonoObligatorio' => $_REQUEST['telefonoObligatorio'],
-                            'telefonOpcional' => $_REQUEST['telefonOpcional'],
-                            'archivoObligatorio' => $_REQUEST['archivoObligatorio'],
-                            'archivoOpcional' => $_REQUEST['archivoOpcional'],
+                            'telefonOpcional' => $_REQUEST['telefonoOpcional'],
                             'textAreaObligatorio' => $_REQUEST['textAreaObligatorio'],
                             'textAreaOpcional' => $_REQUEST['textAreaOpcional'],
                             'radioButtonObligatorio' => $_REQUEST['radioButtonObligatorio'],
                             'checkBoxObligatorio' => $_REQUEST['checkBoxObligatorio'],
                             'rangoObligatorio' => $_REQUEST['rangoObligatorio'],
                             'rangoOpcional' => $_REQUEST['rangoOpcional'],
-                            //'colorOpcional' => $_REQUEST['colorOpcional'] 
+                            'colorOpcional' => $_REQUEST['colorOpcional'] 
                         ];
 
                         //Mostramos las respuestas por pantalla
@@ -396,9 +383,9 @@
                 <div class="form-group">
                     <label for="listaObligatorio">Lista Obligatorio:</label>
                     <select id="listaObligatorio" name="listaObligatorio" required style="background-color: yellow">
-                        <option value="ele1" <?php if(isset($_REQUEST['listaObligatorio'])){ echo 'selected'; }?>>Elemento 1</option>
-                        <option value="ele2" <?php if(isset($_REQUEST['listaObligatorio'])){ echo 'selected'; }?>>Elemento 2</option>
-                        <option value="ele3" <?php if(isset($_REQUEST['listaObligatorio'])){ echo 'selected'; }?>>Elemento 3</option>
+                        <option value="<?php echo $aLista['opc1']?>"><?php echo $aLista['opc1']?></option>
+                        <option value="<?php echo $aLista['opc2']?>"><?php echo $aLista['opc2']?></option>
+                        <option value="<?php echo $aLista['opc3']?>"><?php echo $aLista['opc3']?></option>
                     </select>
                     <?php if (!empty($aErrores['listaObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['listaObligatorio']; ?></span> <?php } ?>
                 </div>
@@ -417,31 +404,17 @@
                     <?php if (!empty($aErrores['telefonoOpcional'])) { ?> <span style="color: red"><?php echo $aErrores['telefonoOpcional']; ?></span> <?php } ?>
                 </div>
 
-                <!-- Campo de archivo obligatorio -->
-                <div class="form-group">
-                    <label for="archivoObligatorio">Archivo Obligatorio:</label>
-                    <input type="file" id="archivoObligatorio" name="archivoObligatorio" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['archivoObligatorio']) ? $_REQUEST['archivoObligatorio'] : ''); ?>">
-                    <?php if (!empty($aErrores['archivoObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['archivoObligatorio']; ?></span> <?php } ?>
-                </div>
-
-                <!-- Campo de archivo opcional -->
-                <div class="form-group">
-                    <label for="archivoOpcional">Archivo Opcional:</label>
-                    <input type="file" id="archivoOpcional" name="archivoOpcional" style="background-color: white" value="<?php echo (isset($_REQUEST['archivoOpcional']) ? $_REQUEST['archivoOpcional'] : ''); ?>">
-                    <?php if (!empty($aErrores['archivoOpcional'])) { ?> <span style="color: red"><?php echo $aErrores['archivoOpcional']; ?></span> <?php } ?>
-                </div>
-
                 <!-- Campo de área de texto obligatorio -->
                 <div class="form-group">
                     <label for="textAreaObligatorio">TextArea Obligatorio:</label>
-                    <textarea id="textAreaObligatorio" name="textAreaObligatorio" rows="4" cols="50"  style="background-color: yellow" required><?php if ($aErrores['textAreaObligatorio'] == null && isset($_REQUEST['textAreaObligatorio'])) {echo ($_REQUEST['textAreaObligatorio']);}?></textarea>
+                    <textarea id="textAreaObligatorio" name="textAreaObligatorio" rows="4" cols="50"  style="background-color: yellow" required></textarea>
                     <?php if (!empty($aErrores['textAreaObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['textAreaObligatorio']; ?></span> <?php } ?>
                 </div>
 
                 <!-- Campo de área de texto opcional -->
                 <div class="form-group">
                     <label for="textAreaOpcional">TextArea Opcional:</label>
-                    <textarea id="textAreaOpcional" name="textAreaOpcional" rows="4" cols="50" style="background-color: white"><?php if ($aErrores['textAreaOpcional'] == null && isset($_REQUEST['textAreaOpcional'])) {echo ($_REQUEST['textAreaOpcional']);}?></textarea>
+                    <textarea id="textAreaOpcional" name="textAreaOpcional" rows="4" cols="50" style="background-color: white"></textarea>
                     <?php if (!empty($aErrores['textAreaOpcional'])) { ?> <span style="color: red"><?php echo $aErrores['textAreaOpcional']; ?></span> <?php } ?>
                 </div>
 
@@ -479,13 +452,13 @@
                     <?php if (!empty($aErrores['rangoOpcional'])) { ?> <span style="color: red"><?php echo $aErrores['rangoOpcional']; ?></span> <?php } ?>
                 </div>
                   
-                <!-- Campo de color opcional 
+                <!-- Campo de color opcional-->
                 <div class="form-group">
                     <label for="colorOpcional">Color Opcional:</label>
-                    <input type="color" id="colorOpcional" name="colorOpcional" value="<?php //echo (isset($_REQUEST['colorOpcional']) ? $_REQUEST['colorOpcional'] : ''); ?>">
-                    <?php //if (!empty($aErrores['colorOpcional'])) { ?> <span style="color: red"><?php //echo $aErrores['colorOpcional']; ?></span> <?php //} ?>
+                    <input type="color" id="colorOpcional" name="colorOpcional" value="<?php echo (isset($_REQUEST['colorOpcional']) ? $_REQUEST['colorOpcional'] : ''); ?>">
+                    <?php if (!empty($aErrores['colorOpcional'])) { ?> <span style="color: red"><?php echo $aErrores['colorOpcional']; ?></span> <?php } ?>
                 </div>
-                -->
+                                
                 <!-- Botón de envío -->
                 <div class="form-group">
                     <input id="enviar" name="enviar" type="submit" value="Enviar">
