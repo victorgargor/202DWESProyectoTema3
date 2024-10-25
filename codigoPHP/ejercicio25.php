@@ -255,7 +255,7 @@
                 <!-- Campo de texto alfabetico obligatorio -->
                 <div class="form-group">
                     <label for="alfabeticoObligatorio">Alfabético Obligatorio:</label>
-                    <input type="text" id="alfabeticoObligatorio" name="alfabeticoObligatorio" placeholder="Ej: Víctor García" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['alfabeticoObligatorio']) ? $_REQUEST['alfabeticoObligatorio'] : ''); ?>">
+                    <input type="text" id="alfabeticoObligatorio" name="alfabeticoObligatorio" placeholder="Ej: Víctor García" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['alfabeticoObligatorio']) ? $_REQUEST['alfabeticoObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['alfabeticoObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['alfabeticoObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -269,7 +269,7 @@
                 <!-- Campo de texto alfanumérico obligatorio -->
                 <div class="form-group">
                     <label for="alfanumericoObligatorio">Alfanumérico Obligatorio:</label>
-                    <input type="text" id="alfanumericoObligatorio" name="alfanumericoObligatorio" placeholder="Ej: Víctor García 123" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['alfanumericoObligatorio']) ? $_REQUEST['alfanumericoObligatorio'] : ''); ?>">
+                    <input type="text" id="alfanumericoObligatorio" name="alfanumericoObligatorio" placeholder="Ej: Víctor García 123" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['alfanumericoObligatorio']) ? $_REQUEST['alfanumericoObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['alfanumericoObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['alfanumericoObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -283,7 +283,7 @@
                 <!-- Campo numérico entero obligatorio -->
                 <div class="form-group">
                     <label for="enteroObligatorio">Entero Obligatorio:</label>
-                    <input type="text" id="enteroObligatorio" name="enteroObligatorio" placeholder="Ej: 300" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['enteroObligatorio']) ? $_REQUEST['enteroObligatorio'] : ''); ?>">
+                    <input type="text" id="enteroObligatorio" name="enteroObligatorio" placeholder="Ej: 300" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['enteroObligatorio']) ? $_REQUEST['enteroObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['enteroObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['enteroObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -297,7 +297,7 @@
                 <!-- Campo numérico float obligatorio -->
                 <div class="form-group">
                     <label for="floatObligatorio">Float Obligatorio:</label>
-                    <input type="text" id="floatObligatorio" name="floatObligatorio" step="0.01" placeholder="Ej: 1.2" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['floatObligatorio']) ? $_REQUEST['floatObligatorio'] : ''); ?>">
+                    <input type="text" id="floatObligatorio" name="floatObligatorio" step="0.01" placeholder="Ej: 1.2" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['floatObligatorio']) ? $_REQUEST['floatObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['floatObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['floatObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -311,7 +311,7 @@
                 <!-- Campo de correo electrónico obligatorio -->
                 <div class="form-group">
                     <label for="emailObligatorio">Email Obligatorio:</label>
-                    <input type="email" id="emailObligatorio" name="emailObligatorio" placeholder="Ej: victor.gargor@educa.jcyl.es" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['emailObligatorio']) ? $_REQUEST['emailObligatorio'] : ''); ?>">
+                    <input type="email" id="emailObligatorio" name="emailObligatorio" placeholder="Ej: victor.gargor@educa.jcyl.es" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['emailObligatorio']) ? $_REQUEST['emailObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['emailObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['emailObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -325,7 +325,7 @@
                 <!-- Campo URL obligatorio -->
                 <div class="form-group">
                     <label for="urlObligatorio">URL Obligatorio:</label>
-                    <input type="text" id="urlObligatorio" name="urlObligatorio" placeholder="Ej: http://192.168.3.202" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['urlObligatorio']) ? $_REQUEST['urlObligatorio'] : ''); ?>">
+                    <input type="text" id="urlObligatorio" name="urlObligatorio" placeholder="Ej: http://192.168.3.202" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['urlObligatorio']) ? $_REQUEST['urlObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['urlObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['urlObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -339,7 +339,7 @@
                 <!-- Campo de fecha obligatorio -->
                 <div class="form-group">
                     <label for="fechaObligatorio">Fecha Obligatorio:</label>
-                    <input type="date" id="fechaObligatorio" name="fechaObligatorio" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['fechaObligatorio']) ? $_REQUEST['fechaObligatorio'] : ''); ?>">
+                    <input type="date" id="fechaObligatorio" name="fechaObligatorio" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['fechaObligatorio']) ? $_REQUEST['fechaObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['fechaObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['fechaObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -353,7 +353,7 @@
                 <!-- Campo DNI obligatorio -->
                 <div class="form-group">
                     <label for="dniObligatorio">DNI Obligatorio:</label>
-                    <input type="text" id="dniObligatorio" name="dniObligatorio" placeholder="Ej: 65654545R" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['dniObligatorio']) ? $_REQUEST['dniObligatorio'] : ''); ?>">
+                    <input type="text" id="dniObligatorio" name="dniObligatorio" placeholder="Ej: 65654545R" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['dniObligatorio']) ? $_REQUEST['dniObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['dniObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['dniObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -367,7 +367,7 @@
                 <!-- Campo código postal obligatorio -->
                 <div class="form-group">
                     <label for="cpObligatorio">CP Obligatorio:</label>
-                    <input type="text" id="cpObligatorio" name="cpObligatorio" placeholder="Ej: 49600" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['cpObligatorio']) ? $_REQUEST['cpObligatorio'] : ''); ?>">
+                    <input type="text" id="cpObligatorio" name="cpObligatorio" placeholder="Ej: 49600" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['cpObligatorio']) ? $_REQUEST['cpObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['cpObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['cpObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -381,7 +381,7 @@
                 <!-- Campo de contraseña obligatorio -->
                 <div class="form-group">
                     <label for="passwordObligatorio">Password Obligatorio (solo letras):</label>
-                    <input type="password" id="passwordObligatorio" name="passwordObligatorio"  style="background-color: yellow" required value="<?php echo (isset($_REQUEST['passwordObligatorio']) ? $_REQUEST['passwordObligatorio'] : ''); ?>">
+                    <input type="password" id="passwordObligatorio" name="passwordObligatorio"  style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['passwordObligatorio']) ? $_REQUEST['passwordObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['passwordObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['passwordObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -395,7 +395,7 @@
                 <!-- Campo lista de selección obligatorio -->
                 <div class="form-group">
                     <label for="listaObligatorio">Lista Obligatorio:</label>
-                    <select id="listaObligatorio" name="listaObligatorio" required style="background-color: yellow">
+                    <select id="listaObligatorio" name="listaObligatorio" required style="background-color: lightyellow">
                         <option value="<?php echo $aLista['opc1']?>"><?php echo $aLista['opc1']?></option>
                         <option value="<?php echo $aLista['opc2']?>"><?php echo $aLista['opc2']?></option>
                         <option value="<?php echo $aLista['opc3']?>"><?php echo $aLista['opc3']?></option>
@@ -406,7 +406,7 @@
                 <!-- Campo de teléfono obligatorio -->
                 <div class="form-group">
                     <label for="telefonoObligatorio">Teléfono Obligatorio:</label>
-                    <input type="tel" id="telefonoObligatorio" name="telefonoObligatorio" placeholder="Ej: 654321987" style="background-color: yellow" required value="<?php echo (isset($_REQUEST['telefonoObligatorio']) ? $_REQUEST['telefonoObligatorio'] : ''); ?>">
+                    <input type="tel" id="telefonoObligatorio" name="telefonoObligatorio" placeholder="Ej: 654321987" style="background-color: lightyellow" required value="<?php echo (isset($_REQUEST['telefonoObligatorio']) ? $_REQUEST['telefonoObligatorio'] : ''); ?>">
                     <?php if (!empty($aErrores['telefonoObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['telefonoObligatorio']; ?></span> <?php } ?>
                 </div>
 
@@ -420,7 +420,7 @@
                 <!-- Campo de archivo obligatorio -->
                 <div class="form-group">
                     <label for="archivoObligatorio">Archivo Obligatorio (php, pdf o txt):</label>
-                    <input type="file" id="archivoObligatorio" name="archivoObligatorio" style="background-color: yellow" required>
+                    <input type="file" id="archivoObligatorio" name="archivoObligatorio" style="background-color: lightyellow" required>
                     <?php if (!empty($aErrores['archivoObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['archivoObligatorio']; ?></span> <?php } ?>
                 </div>
                 <!-- Campo de archivo opcional -->
@@ -433,7 +433,7 @@
                 <!-- Campo de área de texto obligatorio -->
                 <div class="form-group">
                     <label for="textAreaObligatorio">TextArea Obligatorio:</label>
-                    <textarea id="textAreaObligatorio" name="textAreaObligatorio" rows="4" cols="50"  style="background-color: yellow" required><?php echo (isset($_REQUEST['textAreaObligatorio']) ? $_REQUEST['textAreaObligatorio'] : ''); ?></textarea>
+                    <textarea id="textAreaObligatorio" name="textAreaObligatorio" rows="4" cols="50"  style="background-color: lightyellow" required><?php echo (isset($_REQUEST['textAreaObligatorio']) ? $_REQUEST['textAreaObligatorio'] : ''); ?></textarea>
                     <?php if (!empty($aErrores['textAreaObligatorio'])) { ?> <span style="color: red"><?php echo $aErrores['textAreaObligatorio']; ?></span> <?php } ?>
                 </div>
 
