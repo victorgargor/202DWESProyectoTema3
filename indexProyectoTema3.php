@@ -150,8 +150,7 @@
                         <td>Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php. El profesor facilitará a los alumnos la clase
                             AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida.
                         </td>
-                        <td></td>
-                        <td><a href="mostrarcodigo/muestraEjercicio20.php"><img src="doc/show.png" alt="show"></a></td>
+                        <td colspan="2"><a href="mostrarcodigo/muestraEjercicio20.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>21</td>
@@ -188,8 +187,8 @@
                     <tr>
                         <td>25</td>
                         <td>Trabajar en PlantillaFormulario.php mi plantilla para hacer formularios como churros.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio25.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio25.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                     <tr>
                         <td>26</td>
@@ -197,6 +196,12 @@
                             el usuario lo decida) genere un informe con los datos recibidos y un promedios, mínimos y máximos de temperatura y presión atmosférica.</td>
                         <td></td>
                         <td></td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>Ejercicio extra formulario</td>
+                        <td><a href="codigoPHP/ejercicio27.php"><img src="doc/play.png" alt="play"></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio27.php"><img src="doc/show.png" alt="show"></a></td>
                     </tr>
                 </table>
             </nav>       
@@ -207,6 +212,7 @@
                 <a href="/202DWESProyectoDWES/indexProyectoDWES.php">DWES</a>
                 <a target="blank" href="doc/curriculum.pdf"><img src="doc/curriculum.jpg" alt="curriculum"></a>
                 <a target="blank" href="https://github.com/victorgargor/202DWESProyectoTema3"><img src="doc/github.png" alt="github"></a>
+                <a target="blank" href="https://github.com">Web Imitada</a>
             </div>
         </footer>
     </body>
